@@ -8,22 +8,36 @@ body {
 }
 
 .header {
-    background-color: #003366; /* Dark blue header */
-    color: white;
-    padding: 20px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 15px 30px;
+    background-color: rgb(13, 17, 94);
+}
+
+.logo-img {
+    height: 90px; /* Adjusted logo height to match tagline */
+    width: auto;
+    margin-right: 15px; /* Space between logo and text */
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    line-height: 1.2; /* Reduce space between lines */
 }
 
 .logo {
-    font-size: 2.5em;
-    font-weight: bold;
-    margin: 0;
+    font-size: 2.5em; /* Keep balanced with tagline */
+    margin-bottom: 0; /* Remove extra space */
 }
 
 .tagline {
     font-size: 1.2em;
-    color: #cce6ff; /* Light blue accent */
-    margin-top: 5px;
+    color: #00509e;
+    margin-top: -5px; /* Reduce space between logo and tagline */
 }
 
 nav {
