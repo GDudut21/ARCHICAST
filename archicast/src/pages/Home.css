@@ -1,0 +1,121 @@
+/* 
+Background video styling:
+Fixed position, full screen, darkened with a brightness filter.
+*/
+.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(30%);
+}
+
+/* 
+Overlay over the background video:
+Semi-transparent black layer behind main content.
+*/
+.bg-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+/* 
+Fade-in-up animation used for main-title and description.
+*/
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Main title styling (positioned absolutely on the screen) */
+.main-title {
+  font-size: 3em;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  color: #111dcd;
+  max-width: 100%;
+  opacity: 0;
+  animation: fadeInUp 1.2s ease-out forwards;
+}
+
+/* Secondary description text below the main title */
+.description {
+  font-size: 1.4em;
+  line-height: 1;
+  position: absolute;
+  top: calc(60% + 90px);
+  left: 10%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  color: rgb(167, 152, 152);
+  opacity: 0;
+  animation: fadeInUp 1.5s ease-out forwards;
+}
+
+/* 
+Carousel container:
+Absolute positioning, limited size, hides overflow, and has a border radius.
+*/
+.carousel-container {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/* Flex container for the carousel images */
+.carousel {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* Carousel images stacked; fade animation cycles through images */
+.carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+/* 
+Image fade sequence:
+Each image gets a 9s cycle, offset by 3s so they appear one after the other.
+*/
+.carousel img:nth-child(1) { animation: fade 9s infinite 0s; }
+.carousel img:nth-child(2) { animation: fade 9s infinite 3s; }
+.carousel img:nth-child(3) { animation: fade 9s infinite 6s; }
+
+/* 
+Keyframes for fading images in/out in the carousel.
+*/
+@keyframes fade {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  40% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 0; }
+}
