@@ -1,3 +1,8 @@
+/* 
+Global body styles:
+Sets default font, margin, padding, background color, and text color.
+Also centers text by default.
+*/
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,6 +12,10 @@ body {
     text-align: center;
 }
 
+/* 
+Header container:
+Displays a header with a logo and tagline on the left.
+*/
 .header {
     display: flex;
     align-items: center;
@@ -15,12 +24,14 @@ body {
     background-color: #b9d4ee;
 }
 
+/* Logo image styling in the header */
 .logo-img {
     height: 90px;
     width: auto;
     margin-right: 15px;
 }
 
+/* Header text container (logo and tagline) */
 .header-text {
     display: flex;
     flex-direction: column;
@@ -29,17 +40,23 @@ body {
     line-height: 1.2;
 }
 
+/* Main logo text styling */
 .logo {
     font-size: 2.5em;
     margin-bottom: 0;
 }
 
+/* Tagline below the logo */
 .tagline {
     font-size: 1.2em;
     color: #00509e;
     margin-top: -5px;
 }
 
+/* 
+Navigation bar:
+Background color, spacing, and flex layout for nav links.
+*/
 nav {
     background-color: #00509e;
     padding: 15px;
@@ -48,11 +65,13 @@ nav {
     align-items: center;
 }
 
+/* Container for nav links (horizontal layout on larger screens) */
 .nav-links {
     display: flex;
     gap: 20px;
 }
 
+/* Nav links default styling */
 .nav-links a {
     color: white;
     text-decoration: none;
@@ -62,12 +81,14 @@ nav {
     cursor: pointer;
 }
 
+/* Hover effect on nav links */
 .nav-links a:hover {
     background-color: #cce6ff;
     color: #003366;
     border-radius: 5px;
 }
 
+/* Menu toggle icon (hamburger) for mobile */
 .menu-toggle {
     color: white;
     font-size: 1.8em;
@@ -75,6 +96,11 @@ nav {
     display: none;
 }
 
+/* 
+Main container:
+Center content, add padding, background, box shadow, and border radius.
+Hidden by default, becomes visible with .active class.
+*/
 .container {
     padding: 30px;
     background-color: white;
@@ -86,14 +112,24 @@ nav {
     display: none;
 }
 
+/* Shows the container when .active is applied */
 .container.active {
     display: block;
 }
 
+/* 
+Section headings:
+Color them to match brand color (#00509e).
+*/
 h2 {
     color: #00509e;
 }
 
+/* 
+Mobile Responsive Styles:
+When the screen is max-width 768px, display menu toggle,
+hide the nav links until they're activated.
+*/
 @media screen and (max-width: 768px) {
     .menu-toggle {
         display: block;
@@ -117,11 +153,16 @@ h2 {
         display: block;
     }
 
+    /* Show nav links when .active is applied */
     .nav-links.active {
         display: flex;
     }
 }
 
+/* 
+Background video styling:
+Fixed position, full screen, darkened with a brightness filter.
+*/
 .bg-video {
     position: fixed;
     top: 0;
@@ -133,6 +174,10 @@ h2 {
     filter: brightness(30%);
 }
 
+/* 
+Overlay over the background video:
+Semi-transparent black layer behind main content.
+*/
 .bg-overlay {
     position: fixed;
     top: 0;
@@ -143,6 +188,9 @@ h2 {
     z-index: -1;
 }
 
+/* 
+Fade-in-up animation used for main-title and description.
+*/
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -154,6 +202,7 @@ h2 {
     }
 }
 
+/* Main title styling (positioned absolutely on the screen) */
 .main-title {
     font-size: 3em;
     position: absolute;
@@ -167,6 +216,7 @@ h2 {
     animation: fadeInUp 1.2s ease-out forwards;
 }
 
+/* Secondary description text below the main title */
 .description {
     font-size: 1.4em;
     line-height: 1;
@@ -180,6 +230,10 @@ h2 {
     animation: fadeInUp 1.5s ease-out forwards;
 }
 
+/* 
+Carousel container:
+Absolute positioning, limited size, hides overflow, and has a border radius.
+*/
 .carousel-container {
     position: absolute;
     top: 50%;
@@ -191,12 +245,14 @@ h2 {
     border-radius: 8px;
 }
 
+/* Flex container for the carousel images */
 .carousel {
     display: flex;
     width: 100%;
     height: 100%;
 }
 
+/* Carousel images stacked; fade animation cycles through images */
 .carousel img {
     width: 100%;
     height: 100%;
@@ -206,10 +262,17 @@ h2 {
     transition: opacity 1s ease-in-out;
 }
 
+/* 
+Image fade sequence:
+Each image gets a 9s cycle, offset by 3s so they appear one after the other.
+*/
 .carousel img:nth-child(1) { animation: fade 9s infinite 0s; }
 .carousel img:nth-child(2) { animation: fade 9s infinite 3s; }
 .carousel img:nth-child(3) { animation: fade 9s infinite 6s; }
 
+/* 
+Keyframes for fading images in/out in the carousel.
+*/
 @keyframes fade {
     0% { opacity: 0; }
     10% { opacity: 1; }
@@ -218,6 +281,10 @@ h2 {
     100% { opacity: 0; }
 }
 
+/* 
+About section:
+Background image, centered text, and dark overlay for contrast.
+*/
 .about-section {
     position: relative;
     background: url('bg.jpg') no-repeat center center;
@@ -227,7 +294,10 @@ h2 {
     padding: 120px 20px;
 }
 
-/* Add a dark overlay */
+/* 
+Dark overlay for the about section:
+Semi-transparent black layer above the background image.
+*/
 .about-section::before {
     content: "";
     position: absolute;
@@ -239,14 +309,17 @@ h2 {
     z-index: 1;
 }
 
-/* Ensure text is above the overlay */
+/* Ensure text in the about section is above the overlay */
 .about-section h2,
 .about-section p {
     position: relative;
     z-index: 2;
 }
 
-
+/* 
+About section headings and paragraphs:
+Font size, color, spacing.
+*/
 #about h2 {
     font-size: 5em;
     font-weight: bold;
@@ -271,6 +344,9 @@ h2 {
     margin-bottom: 25px;
 }
 
+/* 
+Highlight the active nav item link 
+*/
 .nav-item.active-link {
     background-color: #cce6ff;
     color: #003366;
@@ -280,6 +356,7 @@ h2 {
     transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
+/* Logo link styling */
 .logo-link {
     text-decoration: none;
     color: inherit;
@@ -287,12 +364,17 @@ h2 {
     cursor: pointer;
 }
 
+/* Hover effect for logo and image */
 .logo-link:hover .logo,
 .logo-link:hover .logo-img {
     opacity: 0.8;
     transition: opacity 0.3s ease-in-out;
 }
 
+/* 
+Footer section:
+Background, text color, padding, alignment.
+*/
 .footer {
     background-color: #4d565f;
     color: #ffffff;
@@ -301,6 +383,7 @@ h2 {
     font-size: 14px;
 }
 
+/* Footer links styling */
 .footer-links a,
 .footer-socials a {
     color: #ffffff;
@@ -316,6 +399,7 @@ h2 {
     opacity: 1;
 }
 
+/* Footer info text */
 .footer-info p {
     margin: 5px 0;
     font-size: 12px;
@@ -331,6 +415,7 @@ h2 {
     text-decoration: underline;
 }
 
+/* Payment icons in the footer */
 .footer-payment img {
     width: 50px;
     margin: 0 8px;
@@ -342,15 +427,22 @@ h2 {
     opacity: 1;
 }
 
+/* 
+#about section with background, text color, and padding 
+(appears to overlap with .about-section above, so ensure they match your layout).
+*/
 #about {
     background: url('bg.jpg') no-repeat center center;
     background-size: cover;
-    color: white; /* Adjust text color for visibility */
-    padding: 100px 350px; /* Add padding to prevent text from overlapping */
+    color: white;
+    padding: 100px 350px;
     border-radius: 10px;
 }
 
-/* OUR CREW SECTION */
+/* 
+Our Crew section:
+General container and heading styles.
+*/
 .crew-section {
     text-align: center;
     padding: 50px 0;
@@ -402,10 +494,12 @@ h2 {
     color: #666;
 }
 
+/* Ensures the crew section is displayed inside #about */
 #about .crew-section {
-    display: block; /* Ensure it appears */
+    display: block;
 }
 
+/* Additional about-section styling for text alignment and background overlay */
 .about-section {
     text-align: center;
     padding: 50px 20px;
@@ -413,15 +507,17 @@ h2 {
     color: white;
 }
 
+/* Divider styling for visual separation */
 .section-divider {
     width: 50%;
     margin: 40px auto;
     border: 1px solid #ddd;
 }
 
+/* Repeated crew-section styling with margin-top for spacing */
 .crew-section {
     text-align: center;
-    margin-top: 40px; /* Adds space after 'Who We Are' */
+    margin-top: 40px;
 }
 
 .crew-container {
