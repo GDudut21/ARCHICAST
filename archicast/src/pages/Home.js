@@ -1,5 +1,6 @@
 import React from 'react';
 import './Home.css';
+import Footer from '../templates/Footer';
 
 function Home() {
   return (
@@ -42,7 +43,47 @@ function Home() {
           </div>
         </div>
       </div>
+
+      {/* FOOTER SECTION */}
+      <footer className="footer">
+        <div className="footer-links">
+          <a href="#">Revocation Form</a>
+          <a href="#">FAQ</a>
+          <a href="#">Returns</a>
+          <a href="#">Shipping</a>
+          <a href="#">Contact</a>
+          <a href="#">Mesh Size Instructions</a>
+        </div>
+
+        <div className="footer-socials">
+          <a href="#"><i className="fab fa-facebook"></i></a>
+          <a href="#"><i className="fab fa-instagram"></i></a>
+          <a href="#"><i className="fab fa-snapchat"></i></a>
+          <a href="#"><i className="fab fa-pinterest"></i></a>
+        </div>
+
+        <div className="footer-info">
+          <p>Site by ArchiCast</p>
+          <p>&copy; 2025 ArchiCast | All Rights Reserved</p>
+          <p>
+            <a href="#">Terms & Conditions</a> | <a href="#">Privacy</a> |{' '}
+            <a href="#">Legal Notice</a>
+          </p>
+        </div>
+
+        <div className="footer-payment">
+          <img src="visa.png" alt="Achipelago" />
+          <img src="archiwall.png" alt="Archiwall" />
+          <img src="resilient.png" alt="Resilient" />
+          <img src="amazon.png" alt="White Equipment" />
+        </div>
+      </footer>
     </div>
+    */}
+           
+  <Footer />
+  </div>
+
   );
 }
 
