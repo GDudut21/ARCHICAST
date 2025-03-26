@@ -1,4 +1,4 @@
-/* 1) Make the page fill the browser height so footer can sit at bottom */
+/* Reset & Layout */
 html, body {
   margin: 0;
   padding: 0;
@@ -6,30 +6,30 @@ html, body {
   font-family: Arial, sans-serif;
 }
 
-/* 2) Flex container to push footer below main content if content is short */
 .page-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* 3) Main area grows to fill leftover space */
 .main-content {
   flex: 1;
   padding: 20px;
 }
 
-/* ===== HEADER STYLES (simplified example) ===== */
+/* ===== HEADER STYLES ===== */
 .header {
   display: flex;
   flex-direction: column;
-  background-color: #b9d4ee;
-  padding: 10px 20px;
+  background-color: #b9d4ee; /* Light blue for the top portion */
+  padding: 10px;
+  gap: 20px; /* Space between header-left and header-right */
 }
 
 .header-left {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .logo-img {
@@ -47,71 +47,61 @@ html, body {
   margin: 0;
   font-size: 1em;
   color: #00509e;
+  margin-top: 5px;
 }
 
+/* ===== NAV BAR (Modernized) ===== */
 .header-right {
-  background-color: #00509e;
-  padding: 10px 0;
+  /* Subtle horizontal gradient from darker to lighter blue */
+  background: linear-gradient(90deg, #004080, #00509e);
+
+  /* Slight box shadow to make it “pop” */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  height: 80px;  /* Same vertical space as before */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 .navbar-list {
-  list-style: none;
   display: flex;
-  justify-content: center;
-  gap: 20px;
   margin: 0;
   padding: 0;
+  list-style: none;
+  width: 100%;
+
+  /* Space out each nav item */
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Remove any extra margin if you previously had it */
+.navbar-list li {
+  margin: 0;
 }
 
 .navbar-list li a {
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
-  font-size: 1em;
+  font-size: 1.15em;
   padding: 10px 15px;
-  border-radius: 5px;
-  transition: background 0.3s, color 0.3s;
+  border-radius: 3px;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
 }
 
+/* Hover effect: lighter background, darker text, slight upward shift */
 .navbar-list li a:hover {
   background-color: #cce6ff;
   color: #003366;
+  transform: translateY(-2px);
 }
 
-/* ===== HERO SECTION ===== */
-.hero-section {
-  /* Dark gray background or your preferred color/image */
-  background-color: #4d565f;
-  color: #fff;         /* White text for contrast */
-  display: flex;       /* 2-column layout: text + image */
-  align-items: center; /* Vertically center content */
-  padding: 50px 20px;  /* Generous padding */
-  gap: 30px;           /* Space between text and image */
-  margin-bottom: 20px; /* Spacing below hero */
-}
-
-/* If you want the hero text to stand out more, you could also set a max-width */
-.hero-text {
-  flex: 1; /* Let text fill available space if needed */
-}
-
-.hero-text h1 {
-  margin: 0 0 20px;
-  font-size: 2.5em;    /* Adjust as needed */
-  line-height: 1.2;
-}
-
-.hero-text p {
-  margin: 0;
-  font-size: 1.2em;
-  max-width: 600px;    /* Keep text narrower for readability */
-}
-
-.hero-image img {
-  width: 300px;        /* Example size; adjust as desired */
-  border-radius: 5px;  /* Optional styling */
-}
-
-/* ===== FOOTER STYLES ===== */
+/* ===== FOOTER (Optional) ===== */
 .footer {
   background-color: #4d565f;
   color: #ffffff;
@@ -120,7 +110,31 @@ html, body {
   font-size: 14px;
 }
 
-/* Footer links styling */
+/* ===== FOOTER STYLES ===== */
+/* 2) Container that uses flexbox to push footer down */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Occupies full viewport height */
+}
+
+/* 3) Main content grows to fill leftover space */
+.main-content {
+  flex: 1;
+  padding: 20px;  /* Optional: spacing for your content */
+}
+
+/* 4) Footer sits naturally at bottom after main content */
+.footer {
+  background-color: #4d565f;
+  color: #ffffff;
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 14px;
+  /* No position: fixed or absolute here */
+}
+
+/* OPTIONAL: Footer styling details (links, etc.) */
 .footer-links a,
 .footer-socials a {
   color: #ffffff;
@@ -136,7 +150,6 @@ html, body {
   opacity: 1;
 }
 
-/* Footer info text */
 .footer-info p {
   margin: 5px 0;
   font-size: 12px;
@@ -152,7 +165,6 @@ html, body {
   text-decoration: underline;
 }
 
-/* Payment icons in the footer */
 .footer-payment img {
   width: 50px;
   margin: 0 8px;
