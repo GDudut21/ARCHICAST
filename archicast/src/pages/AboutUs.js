@@ -1,6 +1,7 @@
 // pages/AboutUs/AboutUs.js
 import React from 'react';
 import './AboutUs.css';
+import Footer from '../templates/Footer';
 
 function AboutUs() {
   return (
@@ -23,8 +24,12 @@ function AboutUs() {
           <p>President</p>
         </div>
       </div>
-    </div>
+       
+  <Footer />
+  </div>
+    
   );
 }
+
 
 export default AboutUs;

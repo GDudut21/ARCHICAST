@@ -1,5 +1,6 @@
 import React from 'react';
 import './Home.css';
+import Footer from '../templates/Footer';
 
 function Home() {
   return (
@@ -42,7 +43,7 @@ function Home() {
         </div>
       </div>
 
-      {/* FOOTER SECTION */}
+      {/* FOOTER SECTION 
       <footer className="footer">
         <div className="footer-links">
           <a href="#">Revocation Form</a>
@@ -77,6 +78,11 @@ function Home() {
         </div>
       </footer>
     </div>
+    */}
+           
+  <Footer />
+  </div>
+
   );
 }
 
