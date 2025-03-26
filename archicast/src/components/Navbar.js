@@ -34,13 +34,6 @@ function Layout() {
         </div>
       </header>
 
-      {/* MAIN CONTENT */}
-      <main className="main-content">
-        {/* Your main page content goes here */}
-        <h2>Page Content</h2>
-        <p>This is where you would render your routes or other components.</p>
-      </main>
-
       {/* FOOTER SECTION */}
       <footer className="footer">
         <div className="footer-links">
