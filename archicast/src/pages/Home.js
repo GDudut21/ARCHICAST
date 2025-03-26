@@ -4,6 +4,7 @@ import './Home.css';
 function Home() {
   return (
     <div id="home" className="home active">
+      {/* Overlay container for text + carousel */}
       <div className="overlay">
         <h1 className="main-title">
           GET GREATEST SERVICE
@@ -19,7 +20,7 @@ function Home() {
         {/* Background Video */}
         <video autoPlay loop muted playsInline className="bg-video">
           <source src="archicastvid1.mp4" type="video/mp4" />
-          {/* Fallback message if video can't load */}
+          {/* Fallback if video fails */}
           Your browser does not support the video tag.
         </video>
 
@@ -41,41 +42,6 @@ function Home() {
           </div>
         </div>
       </div>
-
-      {/* FOOTER SECTION */}
-      <footer className="footer">
-        <div className="footer-links">
-          <a href="#">Revocation Form</a>
-          <a href="#">FAQ</a>
-          <a href="#">Returns</a>
-          <a href="#">Shipping</a>
-          <a href="#">Contact</a>
-          <a href="#">Mesh Size Instructions</a>
-        </div>
-
-        <div className="footer-socials">
-          <a href="#"><i className="fab fa-facebook"></i></a>
-          <a href="#"><i className="fab fa-instagram"></i></a>
-          <a href="#"><i className="fab fa-snapchat"></i></a>
-          <a href="#"><i className="fab fa-pinterest"></i></a>
-        </div>
-
-        <div className="footer-info">
-          <p>Site by ArchiCast</p>
-          <p>&copy; 2025 ArchiCast | All Rights Reserved</p>
-          <p>
-            <a href="#">Terms & Conditions</a> | <a href="#">Privacy</a> |{' '}
-            <a href="#">Legal Notice</a>
-          </p>
-        </div>
-
-        <div className="footer-payment">
-          <img src="visa.png" alt="Achipelago" />
-          <img src="archiwall.png" alt="Archiwall" />
-          <img src="resilient.png" alt="Resilient" />
-          <img src="amazon.png" alt="White Equipment" />
-        </div>
-      </footer>
     </div>
   );
 }
