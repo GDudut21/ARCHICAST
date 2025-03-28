@@ -5,7 +5,14 @@ import Footer from '../templates/Footer';
 function Home() {
   return (
     <div id="home" className="home active">
-      {/* Overlay container for text + carousel */}
+      {/* Background Video */}
+      <video autoPlay loop muted playsInline className="bg-video">
+        <source src="archicastvid1.mp4" type="video/mp4" />
+        {/* Fallback message if the video can't load */}
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Overlay Content */}
       <div className="overlay">
         <h1 className="main-title">
           GET GREATEST SERVICE
@@ -17,13 +24,6 @@ function Home() {
           <br />
           YOU CAN TRUST TO BUILD.
         </p>
-
-        {/* Background Video */}
-        <video autoPlay loop muted playsInline className="bg-video">
-          <source src="archicastvid1.mp4" type="video/mp4" />
-          {/* Fallback if video fails */}
-          Your browser does not support the video tag.
-        </video>
 
         {/* Image Carousel */}
         <div
@@ -44,7 +44,7 @@ function Home() {
         </div>
       </div>
 
-      {/* FOOTER SECTION */}
+      {/* Footer Section */}
       <footer className="footer">
         <div className="footer-links">
           <a href="#">Revocation Form</a>
@@ -78,12 +78,10 @@ function Home() {
           <img src="amazon.png" alt="White Equipment" />
         </div>
       </footer>
-    </div>
-    */}
-           
-  <Footer />
-  </div>
 
+      {/* Additional Footer Component */}
+      <Footer />
+    </div>
   );
 }
 

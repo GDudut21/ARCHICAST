@@ -1,4 +1,4 @@
-html, body {
+cdhtml, body {
     height: 100%; /* Ensures the body takes up the entire height */
     margin: 0; /* Removes default margin */
     display: flex; /* Use flexbox */
